@@ -1,3 +1,19 @@
+{% comment %} {% if search_results|length == 0 %}
+    <p style="color: red;">Your search <span style="color: black;">'{{ query }}'</span> did not match any car</p>
+{% else %}
+    {% for result in search_results %}
+        <ul>
+            <li>Vehicle no: {{ result.vehicleno }}</li>
+            <li>location: {{ result.location }}</li>
+            <li>Junction: {{ result.junction }}</li>
+            <li>Date and time: {{ result.created }}</li>
+        </ul>
+    {% endfor %}
+{% endif %} {% endcomment %}
+
+
+
+
 
 <!DOCTYPE html>
 <html>
@@ -145,15 +161,29 @@ cursor: pointer;
         <th style="background-color:rgb(71, 172, 255);"><b>Location</b></th>
       <th style="background-color:rgb(71, 172, 255);"><b>Junction</b></th>
     </tr>
+
+
+    {% if search_results|length == 0 %}
+    <p style="color: red;">Your search <span style="color: black;">'{{ query }}'</span> did not match any car</p>
+{% else %}
+    {% for result in search_results %}
+        <tr>
+            <td>{{ result.vehicleno }}</td>
+            <td>{{ result.created }}</td>
+            <td>{{ result.location }}</td>
+            <td>{{ result.junction }}</td>
+        </tr>
+    {% endfor %}
+{% endif %}
     
-    {% for car in vehicle %}
+    {% comment %} {% for car in vehicle %}
     <tr>
       <td >{{car.vehicleno}}</td>
       <td >{{ car.created }}</td>
       <td >{{car.location}}</td>
       <td >{{car.junction}}</td>
     </tr>
-    {% endfor %}
+    {% endfor %} {% endcomment %}
     
   </table>
   

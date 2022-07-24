@@ -94,9 +94,9 @@ cursor: pointer;
   <br/><br/><br/><br/>
   
   <br/><br/><br/><br/>
-<form action="/search">
+<form action="#">
    
-    {% comment %} <select id="text" font="4">
+    <select id="text" font="4">
       <option name="Select">Select the details here &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
@@ -105,10 +105,7 @@ cursor: pointer;
       <option name="Location">Location</option>
       <option name="Junction">Junction</option>
   </select>
-    <i class="fa fa-search"style="font-size: 18px;"> {% endcomment %}
-      <input type="text" name="q" id="">
-      <input type="submit" name="" id="">
-      
+    <i class="fa fa-search"style="font-size: 18px;">
     </i>
   </body>
 </form>
@@ -141,20 +138,44 @@ cursor: pointer;
   <table border="10" >
     <tr>
       <th style="background-color:rgb(71, 172, 255);"><b>Vehicle No.</b></th>
-      <th style="background-color:rgb(71, 172, 255);"><b>Time and Date</b></th>
+      <th style="background-color:rgb(71, 172, 255);"><b>Time</b></th>
         <th style="background-color:rgb(71, 172, 255);"><b>Location</b></th>
       <th style="background-color:rgb(71, 172, 255);"><b>Junction</b></th>
     </tr>
-    
-    {% for car in vehicle %}
     <tr>
-      <td >{{car.vehicleno}}</td>
-      <td >{{ car.created }}</td>
-      <td >{{car.location}}</td>
-      <td >{{car.junction}}</td>
+      <td >KA 03 AH 1234</td>
+      <td >9:00AM</td>
+      <td >Bangalore</td>
+      <td >J4</td>
     </tr>
-    {% endfor %}
-    
+    <tr>
+      <td >MH 05 FA 3456</td>
+      <td >1:14PM</td>
+      <td >Madhya Pradesh</td>
+      <td >J1</td>
+    </tr>
+    <tr>
+      <td>DL 09 AG 6578</td>
+      <td>6:45AM</td>
+      <td>Delhi</td>
+      <td>J7</td>
+    </tr>
+    <tr>
+      <td>MH 05 FA 3456</td>
+      <td>1:14PM</td>
+      <td>Madhya Pradesh</td>
+      <td>J1</td>
+    </tr>
+    <td>KA 03 AH 1234</td>
+      <td>9:00AM</td>
+      <td>Bangalore</td>
+      <td>J4</td>
+    </tr>
+    <td>DL 09 AG 6578</td>
+      <td>6:45AM</td>
+      <td>Delhi</td>
+      <td>J7</td>
+    </tr>
   </table>
   
 </div>

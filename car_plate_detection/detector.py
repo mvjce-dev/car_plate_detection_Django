@@ -26,7 +26,7 @@ from matplotlib import pyplot as plt
 # Read Image, Grayscale and Blur
 
 for i in range(0, 4):
-  img = cv2.imread(f"images/{i}.jpg")
+  img = cv2.imread(f"static/test.jpg")
   gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
   # plt.imshow(cv2.cvtColor(gray, cv2.COLOR_BGR2RGB))
   
